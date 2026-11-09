@@ -42,12 +42,12 @@ class SymconVRMPVForecast extends IPSModule
         $token = trim($this->ReadPropertyString('AccessToken'));
         $installationID = trim($this->ReadPropertyString('InstallationID'));
         if ($token === '' || $installationID === '') {
-$this->SetValue('FetchError', true);
+            $this->SetValue('FetchError', true);
             $this->SetValue('Status', 'Bitte VRM Access Token und Anlagen-ID konfigurieren');
             return;
         }
         if (!ctype_digit($installationID)) {
-$this->SetValue('FetchError', true);
+            $this->SetValue('FetchError', true);
             $this->SetValue('Status', 'Die VRM Anlagen-ID muss numerisch sein');
             return;
         }
@@ -56,7 +56,7 @@ $this->SetValue('FetchError', true);
         $start = strtotime('today');
         $end = strtotime('+' . $days . ' days', $start);
         if ($start === false || $end === false) {
-$this->SetValue('FetchError', true);
+            $this->SetValue('FetchError', true);
             $this->SetValue('Status', 'Zeitraum konnte nicht berechnet werden');
             return;
         }
@@ -70,14 +70,14 @@ $this->SetValue('FetchError', true);
 
         $response = $this->RequestVRM($url, $token);
         if (!$response['ok']) {
-$this->SetValue('FetchError', true);
+            $this->SetValue('FetchError', true);
             $this->SetValue('Status', $response['error']);
             return;
         }
 
         $decoded = json_decode($response['body'], true);
         if (!is_array($decoded)) {
-$this->SetValue('FetchError', true);
+            $this->SetValue('FetchError', true);
             $this->SetValue('Status', 'VRM API lieferte kein gültiges JSON');
             return;
         }
@@ -97,7 +97,7 @@ $this->SetValue('FetchError', true);
             JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_INVALID_UTF8_SUBSTITUTE
         );
         if ($json === false) {
-$this->SetValue('FetchError', true);
+            $this->SetValue('FetchError', true);
             $this->SetValue('Status', 'Forecast konnte nicht in JSON umgewandelt werden');
             return;
         }
