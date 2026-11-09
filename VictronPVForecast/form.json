@@ -1,0 +1,36 @@
+{
+    "elements": [
+        {
+            "type": "ValidationTextBox",
+            "name": "AccessToken",
+            "caption": "VRM Access Token"
+        },
+        {
+            "type": "ValidationTextBox",
+            "name": "InstallationID",
+            "caption": "VRM Anlagen-ID"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "ReadInterval",
+            "caption": "Abfrageintervall (Sekunden)",
+            "minimum": 300,
+            "maximum": 86400,
+            "default": 3600
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "ForecastDays",
+            "caption": "Forecast-Zeitraum (Tage)",
+            "minimum": 1,
+            "maximum": 7,
+            "default": 2
+        },
+        {
+            "type": "Label",
+            "caption": "Der Forecast wird als JSON in der Variable „PV Forecast (JSON)“ bereitgestellt. Erfordert einen VRM Access Token und die numerische Anlagen-ID."
+        }
+    ],
+    "actions": [],
+    "status": []
+}
