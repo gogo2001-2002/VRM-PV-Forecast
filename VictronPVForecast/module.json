@@ -1,0 +1,16 @@
+{
+    "id": "{E298FE85-4112-41C6-B633-01AA91C0D1B2}",
+    "name": "Symcon VRM PV Forecast",
+    "type": 3,
+    "vendor": "Custom",
+    "aliases": [
+        "Symcon VRM PV Forecast",
+        "Victron VRM Forecast (Custom)"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "VPF",
+    "version": "1.1",
+    "build": 1
+}
